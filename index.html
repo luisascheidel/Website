@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Luisa Scheidel | Triforce of Health</title>
+
+    <style>
+        :root {
+            --navy: #344967;
+            --navy-dark: #273951;
+            --beige: #e9e6df;
+            --beige-light: #f4f2ed;
+            --white: #ffffff;
+            --text: #3d4652;
+            --muted: #727985;
+            --line: #d9d5cd;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            color: var(--text);
+            background: var(--beige-light);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            background: var(--navy);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1250px;
+            margin: auto;
+            padding: 22px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 400;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1250px;
+            margin: auto;
+            padding: 75px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-image {
+            min-height: 560px;
+            background:
+                linear-gradient(rgba(52,73,103,0.08), rgba(52,73,103,0.08)),
+                #d9d7d1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image span {
+            color: #777;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .hero-text {
+            background: #dedbd5;
+            padding: 65px 65px 70px;
+        }
+
+        .eyebrow {
+            color: var(--navy);
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            color: var(--navy);
+            font-size: clamp(42px, 5vw, 66px);
+            line-height: 1.05;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+        }
+
+        .hero-text p {
+            font-size: 17px;
+            margin-bottom: 32px;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--navy);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background: var(--navy-dark);
+            transform: translateY(-2px);
+        }
+
+        .button-light {
+            background: transparent;
+            color: var(--navy);
+            border: 1px solid var(--navy);
+            margin-left: 10px;
+        }
+
+        .button-light:hover {
+            background: var(--navy);
+            color: white;
+        }
+
+        /* GENERAL */
+
+        .section {
+            padding: 100px 40px;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: var(--navy);
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            font-weight: 300;
+            color: var(--navy);
+            margin-top: 8px;
+        }
+
+        /* TRIFORCE */
+
+        .triforce {
+            background: var(--beige);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--beige-light);
+            padding: 45px 35px;
+            text-align: center;
+            border-top: 2px solid var(--navy);
+        }
+
+        .card-number {
+            color: var(--navy);
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--navy);
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        /* ABOUT */
+
+        .about {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-photo {
+            min-height: 500px;
+            background: #d8d5ce;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .about-text h2 {
+            color: var(--navy);
+            font-size: 40px;
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        /* ABLAUF */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            text-align: center;
+        }
+
+        .step-number {
+            color: var(--navy);
+            font-size: 38px;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            color: var(--navy);
+            font-size: 21px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* PREISE */
+
+        .prices {
+            background: var(--beige);
+        }
+
+        .price-list {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .price {
+            display: flex;
+            justify-content: space-between;
+            padding: 22px 5px;
+            border-bottom: 1px solid var(--line);
+            font-size: 17px;
+        }
+
+        .price strong {
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        /* REVIEWS */
+
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .review {
+            background: var(--beige);
+            padding: 40px;
+        }
+
+        .review p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .review strong {
+            color: var(--navy);
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* TERMIN */
+
+        .booking {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+        }
+
+        .booking .section-title h2,
+        .booking .section-title span {
+            color: white;
+        }
+
+        .booking-text {
+            max-width: 650px;
+            margin: -25px auto 35px;
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--navy-dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 13px;
+        }
+
+        footer a {
+            margin: 0 10px;
+            opacity: 0.85;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .nav {
+                padding: 18px 22px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 18px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 35px 20px 60px;
+                gap: 25px;
+            }
+
+            .hero-image {
+                min-height: 400px;
+            }
+
+            .hero-text {
+                padding: 45px 30px;
+            }
+
+            .cards,
+            .steps,
+            .reviews {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .about-photo {
+                min-height: 400px;
+            }
+
+            .section {
+                padding: 70px 20px;
+            }
+
+            .button-light {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">LUISA SCHEIDEL</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#konzept">Konzept</a>
+            <a href="#ueber-mich">Über mich</a>
+            <a href="#ablauf">Ablauf</a>
+            <a href="#leistungen">Leistungen</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-image">
+            <span>DEIN FOTO KOMMT HIER HIN</span>
+        </div>
+
+        <div class="hero-text">
+
+            <div class="eyebrow">Triforce of Health</div>
+
+            <h1>Herzlich<br>Willkommen</h1>
+
+            <p>
+                Leidest du unter Schmerzen und hast schon vieles
+                ausprobiert – aber nichts hat wirklich geholfen?
+            </p>
+
+            <p>
+                Ich gehe den Ursachen deiner Beschwerden auf den
+                Grund und entwickle gemeinsam mit dir eine gezielte,
+                nachhaltige Lösung.
+            </p>
+
+            <a href="#kontakt" class="button">
+                Beratungstermin vereinbaren
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRIFORCE -->
+
+    <section id="konzept" class="section triforce">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <span>Ganzheitlicher Ansatz</span>
+                <h2>Triforce of Health</h2>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-number">01</div>
+                    <h3>Biomechanik</h3>
+                    <p>
+                        Wir betrachten Bewegungsmuster und Fehlbelastungen
+                        und arbeiten daran, die natürliche Funktion des
+                        Bewegungsapparats zu unterstützen.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-number">02</div>
+                    <h3>Biohacking</h3>
+                    <p>
+                        Individuelle Ansätze rund um Ernährung,
+                        Regeneration und Lifestyle können dabei helfen,
+                        den eigenen Körper besser zu verstehen.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-number">03</div>
+                    <h3>Mindset</h3>
+                    <p>
+                        Körper und mentale Stärke gehören für mich
+                        zusammen. Deshalb betrachten wir auch die
+                        persönlichen und emotionalen Zusammenhänge.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ÜBER MICH -->
+
+    <section id="ueber-mich" class="section">
+
+        <div class="section-inner">
+
+            <div class="about">
+
+                <div class="about-photo">
+                    <span>DEIN FOTO KOMMT HIER HIN</span>
+                </div>
+
+                <div class="about-text">
+
+                    <div class="eyebrow">Über mich</div>
+
+                    <h2>Gesundheit ganzheitlich betrachten</h2>
+
+                    <p>
+                        Mein Name ist Luisa Scheidel. Als Expertin für
+                        ganzheitliche Gesundheit helfe ich Menschen dabei,
+                        Beschwerden und persönliche Herausforderungen
+                        aus verschiedenen Perspektiven zu betrachten.
+                    </p>
+
+                    <p>
+                        Mit meinem Triforce-of-Health-Konzept verbinde ich
+                        Biomechanik, Biohacking und Mindset zu einem
+                        individuellen Ansatz.
+                    </p>
+
+                    <p>
+                        Gemeinsam schauen wir genauer hin und entwickeln
+                        einen Weg, der zu dir und deinem Alltag passt.
+                    </p>
+
+                    <a href="#kontakt" class="button">
+                        Kontakt aufnehmen
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABLAUF -->
+
+    <section id="ablauf" class="section triforce">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <span>Dein Weg</span>
+                <h2>So läuft es ab</h2>
+            </div>
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Analyse</h3>
+                    <p>
+                        Wir schauen uns deine individuelle Situation
+                        und deine Bewegungsmuster genau an.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Zusammenhänge erkennen</h3>
+                    <p>
+                        Gemeinsam betrachten wir mögliche Zusammenhänge
+                        und entwickeln ein umfassenderes Bild.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Individueller Weg</h3>
+                    <p>
+                        Daraus entsteht eine auf dich abgestimmte
+                        Strategie für deine nächsten Schritte.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEISTUNGEN -->
+
+    <section id="leistungen" class="section prices">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <span>Meine Angebote</span>
+                <h2>Leistungen & Preise</h2>
+            </div>
+
+            <div class="price-list">
+
+                <div class="price">
+                    <span>Sporttherapie · 60 Min.</span>
+                    <strong>89 €</strong>
+                </div>
+
+                <div class="price">
+                    <span>Mindset Coaching · 60 Min.</span>
+                    <strong>89 €</strong>
+                </div>
+
+                <div class="price">
+                    <span>Biohacking Coaching · 60 Min.</span>
+                    <strong>89 €</strong>
+                </div>
+
+                <div class="price">
+                    <span>Massage · 30 Min.</span>
+                    <strong>35 €</strong>
+                </div>
+
+                <div class="price">
+                    <span>Massage · 45 Min.</span>
+                    <strong>45 €</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REZENSIONEN -->
+
+    <section class="section">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <span>Erfahrungen</span>
+                <h2>Was meine Klienten sagen</h2>
+            </div>
+
+            <div class="reviews">
+
+                <div class="review">
+                    <p>
+                        „Ich hatte das Biohacking Coaching gebucht, da ich
+                        immer Probleme mit roten und schuppigen Stellen
+                        auf der Haut hatte. Durch das Coaching, die
+                        Umsetzung der Ernährung sowie die Einnahme der
+                        Supplements haben sich meine Beschwerden
+                        deutlich verändert.“
+                    </p>
+
+                    <strong>— Julian</strong>
+                </div>
+
+                <div class="review">
+                    <p>
+                        Deine zweite Rezension können wir hier später
+                        einsetzen.
+                    </p>
+
+                    <strong>— Name</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KONTAKT -->
+
+    <section id="kontakt" class="section booking">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <span>Dein nächster Schritt</span>
+                <h2>Vereinbare deinen Termin</h2>
+            </div>
+
+            <p class="booking-text">
+                Du möchtest mehr über mein Konzept erfahren oder
+                herausfinden, welcher Ansatz zu dir passt?
+                Ich freue mich auf deine Nachricht.
+            </p>
+
+            <a href="#" class="button">
+                Beratungstermin vereinbaren
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>© 2026 Luisa Scheidel · Triforce of Health</p>
+
+    <p style="margin-top: 12px;">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+    </p>
+
+</footer>
+
+</body>
+</html>
