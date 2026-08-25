@@ -478,6 +478,20 @@
             font-weight: 500;
         }
 
+         .legal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+        }
+
+        .legal-column p {
+            margin-bottom: 35px;
+        }
+
+        .legal-column strong {
+            font-weight: 400;
+        }
+
         
         /* MOBILE */
 
@@ -538,6 +552,17 @@
                 margin-left: 0;
                 margin-top: 10px;
             }
+
+            .button-light {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
         }
     </style>
 </head>
@@ -943,12 +968,15 @@
             <h2>Impressum</h2>
         </div>
 
-        <div class="legal-content">
+        ```html
+<div class="legal-content">
 
-            <h3>Angaben gemäß § 5 DDG</h3>
+    <div class="legal-grid">
+
+        <div class="legal-column">
 
             <p>
-                <strong>Luisa Scheidel</strong><br>
+                Luisa Scheidel<br>
                 Tilsitstraße 1<br>
                 38126 Braunschweig<br>
                 Deutschland
@@ -959,6 +987,11 @@
                 Telefon: +49 (0) 176 51618178<br>
                 E-Mail: scheidel.luisa@gmx.de
             </p>
+
+        </div>
+
+
+        <div class="legal-column">
 
             <p>
                 <strong>Tätigkeit</strong><br>
@@ -972,14 +1005,14 @@
 
             <p>
                 <strong>Verantwortlich für den Inhalt</strong><br>
-                Luisa Scheidel<br>
-                Tilsitstraße 1<br>
-                38126 Braunschweig
+                Luisa Scheidel
             </p>
 
         </div>
 
     </div>
+
+</div>
 
 </section>    
 
