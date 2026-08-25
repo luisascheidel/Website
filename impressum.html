@@ -2,10 +2,16 @@
 <html lang="de">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Impressum | Luisa Scheidel</title>
+
+    <!-- Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
 
@@ -15,113 +21,149 @@
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Manrope", sans-serif;
             color: #354052;
             background: #f4f2ee;
+            line-height: 1.7;
         }
 
         .page {
             max-width: 1250px;
             margin: 0 auto;
-            padding: 80px 40px 100px;
+            padding: 55px 70px 90px;
         }
+
+        /* Zurück-Link */
 
         .back {
             display: inline-block;
-            margin-bottom: 70px;
+            margin-bottom: 80px;
             color: #354052;
             text-decoration: none;
             font-size: 15px;
+            font-weight: 400;
         }
 
         .back:hover {
-            opacity: 0.7;
+            opacity: 0.65;
         }
+
+        /* Überschrift */
 
         .section-title span {
             display: block;
-            margin-bottom: 14px;
-            font-size: 13px;
-            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            color: #777;
+            color: #354052;
         }
 
         .section-title h1 {
             margin: 0;
-            font-size: 48px;
-            font-weight: 400;
-            line-height: 1.15;
+            font-size: 64px;
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            text-transform: uppercase;
         }
 
+        /* Inhalt */
+
         .legal-content {
-            max-width: 950px;
-            margin-top: 60px;
-            font-size: 15px;
-            line-height: 1.8;
+            margin-top: 95px;
         }
 
         .legal-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 100px;
+            column-gap: 120px;
+            align-items: start;
+        }
+
+        .legal-column {
+            font-size: 15px;
         }
 
         .legal-column p {
-            margin: 0 0 35px;
+            margin: 0 0 42px;
         }
 
         .legal-column strong {
+            display: inline-block;
+            margin-bottom: 8px;
             font-weight: 500;
         }
+
+        /* Footer */
 
         footer {
             margin-top: 100px;
             padding-top: 30px;
             border-top: 1px solid rgba(53, 64, 82, 0.15);
-            font-size: 14px;
         }
 
         footer a {
             color: #354052;
             text-decoration: none;
+            font-size: 15px;
         }
+
+        footer a:hover {
+            opacity: 0.65;
+        }
+
+        /* Mobile */
 
         @media (max-width: 768px) {
 
             .page {
-                padding: 50px 25px 70px;
+                padding: 35px 25px 60px;
             }
 
             .back {
-                margin-bottom: 50px;
+                margin-bottom: 55px;
+                font-size: 15px;
+            }
+
+            .section-title span {
+                font-size: 12px;
+                letter-spacing: 2.5px;
             }
 
             .section-title h1 {
-                font-size: 38px;
+                font-size: 44px;
+                letter-spacing: -0.5px;
             }
 
             .legal-content {
-                margin-top: 45px;
+                margin-top: 60px;
             }
 
             .legal-grid {
                 grid-template-columns: 1fr;
-                gap: 0;
+                row-gap: 0;
+            }
+
+            .legal-column {
+                font-size: 15px;
             }
 
             .legal-column p {
-                margin-bottom: 30px;
+                margin-bottom: 35px;
             }
 
             footer {
-                margin-top: 70px;
+                margin-top: 65px;
             }
 
         }
 
     </style>
+
 </head>
+
 
 <body>
 
@@ -131,14 +173,22 @@
             ← Zurück zur Startseite
         </a>
 
+
         <div class="section-title">
+
             <span>Rechtliche Informationen</span>
+
             <h1>Impressum</h1>
+
         </div>
+
 
         <div class="legal-content">
 
             <div class="legal-grid">
+
+
+                <!-- LINKE SPALTE -->
 
                 <div class="legal-column">
 
@@ -146,12 +196,14 @@
                         <strong>Angaben gemäß § 5 DDG</strong>
                     </p>
 
+
                     <p>
                         Luisa Scheidel<br>
                         Tilsitstraße 1<br>
                         38126 Braunschweig<br>
                         Deutschland
                     </p>
+
 
                     <p>
                         <strong>Kontakt</strong><br>
@@ -161,6 +213,9 @@
 
                 </div>
 
+
+                <!-- RECHTE SPALTE -->
+
                 <div class="legal-column">
 
                     <p>
@@ -168,10 +223,12 @@
                         Personal Training &amp; Coaching
                     </p>
 
+
                     <p>
                         <strong>Umsatzsteuer-Identifikationsnummer</strong><br>
                         DE457859326
                     </p>
+
 
                     <p>
                         <strong>Verantwortlich für den Inhalt</strong><br>
@@ -182,12 +239,18 @@
 
                 </div>
 
+
             </div>
 
         </div>
 
+
         <footer>
-            <a href="index.html">Zurück zur Startseite</a>
+
+            <a href="index.html">
+                Zurück zur Startseite
+            </a>
+
         </footer>
 
     </main>
