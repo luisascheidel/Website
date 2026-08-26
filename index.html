@@ -585,17 +585,32 @@
             .legal-column {
                 width: 100%;
             }
+
+             .reviews {
+                display: flex;
+                overflow-x: auto;
+                gap: 18px;
+                scroll-snap-type: x mandatory;
+                padding-bottom: 15px;
+                padding-right: 12%;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .reviews::-webkit-scrollbar {
+                display: none;
+            }
+
+            .review {
+                flex: 0 0 88%;
+                scroll-snap-align: start;
+            }
         }
 </style>
 </head>
 
 <body>
-        }
-    </style>
-</head>
-
-<body>
-
+   
 <header>
     <div class="nav">
         <div class="logo">LUISA SCHEIDEL</div>
